@@ -1,0 +1,46 @@
+name: Deploy
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "18"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build for production
+              run: npm run build
+
+            - name: Deploy to server
+              run: |
+                  echo "Add your deployment commands here"
+                  # Examples:
+                  # rsync -r ./dist/ user@server:/var/www/html/
+                  # docker build -t app .
+                  # docker run -d --name app -p 80:80 app
+
+    manual-deploy:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'workflow_dispatch'
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Manual deployment
+              run: |
+                  echo "Manual deployment triggered"
+                  echo "Add your manual deployment steps here"

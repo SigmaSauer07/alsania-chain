@@ -1,0 +1,29 @@
+# Global Owners
+
+- @SigmaSauer07
+
+# Contracts
+
+/contracts/ @SigmaSauer07
+
+# Documentation
+
+/docs/ @SigmaSauer07
+/README.md @SigmaSauer07
+
+# GitHub Configuration
+
+/.github/ @SigmaSauer07
+
+# Docker Configuration
+
+/docker/ @SigmaSauer07
+
+# Scripts and Configuration
+
+/scripts/ @SigmaSauer07
+/configs/ @SigmaSauer07
+
+# Security and Environment Files
+
+.env\* @SigmaSauer07
