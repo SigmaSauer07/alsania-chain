@@ -9,6 +9,7 @@ on:
 jobs:
     update:
         runs-on: ubuntu-latest
+            bash: npx install update
 
         steps:
             - uses: actions/checkout@v4
